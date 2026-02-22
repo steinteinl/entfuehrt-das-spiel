@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ENTFÜHRT - Das Spiel</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>⚡ ENTFÜHRT ⚡</h1>
+            <h2>Die Suche nach meinen Eltern</h2>
+        </header>
+
+        <main>
+            <!-- Charaktererstellung (wird zuerst angezeigt) -->
+            <div id="charakter-erstellung" class="screen active">
+                <h3>📋 Charakter erstellen</h3>
+                
+                <div class="form-group">
+                    <label for="name">Vorname:</label>
+                    <input type="text" id="name" placeholder="z.B. Lukas">
+                </div>
+
+                <div class="form-group">
+                    <label for="alter">Alter (12-25):</label>
+                    <input type="number" id="alter" min="12" max="25" value="16">
+                </div>
+
+                <div class="form-group">
+                    <label for="persoenlichkeit">Persönlichkeit:</label>
+                    <input type="text" id="persoenlichkeit" placeholder="z.B. mutig, aber vorsichtig">
+                </div>
+
+                <div class="form-group">
+                    <label for="geschichte">Geschichte wählen:</label>
+                    <select id="geschichte">
+                        <option value="Entführt – Die Suche nach meinen Eltern">🏙️ Gegenwart - Entführt</option>
+                        <option value="Das verfluchte Anwesen">🏰 1920er - Verfluchtes Anwesen</option>
+                        <option value="Die letzte Kolonie – Signalverlust">🚀 Zukunft - Letzte Kolonie</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="schwierigkeit">Schwierigkeit:</label>
+                    <select id="schwierigkeit">
+                        <option value="Story-Modus">📖 Story-Modus (einfacher)</option>
+                        <option value="Normal" selected>⚖️ Normal</option>
+                        <option value="Schwer">💀 Schwer</option>
+                        <option value="Albtraum">👹 Albtraum</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="faehigkeit">Spezialfähigkeit:</label>
+                    <input type="text" id="faehigkeit" placeholder="z.B. Unsichtbarkeit">
+                    <small>Je mächtiger, desto geringer die Chance (1-1000 Würfel)</small>
+                </div>
+
+                <div class="form-group">
+                    <label for="seltenheit">Wie selten?</label>
+                    <select id="seltenheit">
+                        <option value="1">Realistisch (90% Chance)</option>
+                        <option value="2">Fortgeschritten (50% Chance)</option>
+                        <option value="3">Sehr selten (10% Chance)</option>
+                        <option value="4">Unmöglich (0,1% Chance)</option>
+                    </select>
+                </div>
+
+                <button id="start-game" class="btn-start">🎲 Spiel starten</button>
+            </div>
+
+            <!-- Hauptspiel (wird nach Charaktererstellung angezeigt) -->
+            <div id="spiel" class="screen">
+                <div id="spiel-header">
+                    <div id="charakter-info"></div>
+                    <div id="button-container">
+                        <button id="speichern-btn" class="btn-small">💾 Speichern</button>
+                        <button id="laden-btn" class="btn-small">📂 Laden</button>
+                        <button id="inventar-btn" class="btn-small">📦 Inventar</button>
+                    </div>
+                </div>
+
+                <div id="spielausgabe">
+                    <p class="story-text">=== Willkommen zum Spiel ===</p>
+                </div>
+
+                <div class="input-area">
+                    <input type="text" id="befehl" placeholder="Was tust du? z.B. 'Polizei rufen', 'Durchsuchen'...">
+                    <button id="senden-btn">⏎ Senden</button>
+                </div>
+            </div>
+
+            <!-- Inventar-Overlay -->
+            <div id="inventar-overlay" class="overlay">
+                <div class="overlay-content">
+                    <h3>📦 Inventar</h3>
+                    <div id="inventar-inhalt"></div>
+                    <button id="inventar-schliessen">Schließen</button>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

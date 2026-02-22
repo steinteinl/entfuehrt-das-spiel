@@ -1,0 +1,3 @@
+# .gitignore - Verhindert, dass geheime Dateien hochgeladen werden
+.env
+node_modules/
